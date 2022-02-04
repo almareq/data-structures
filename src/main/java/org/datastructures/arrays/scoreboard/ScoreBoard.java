@@ -19,6 +19,19 @@ public class ScoreBoard {
         }
     }
 
+    public void remove(int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index >= numEntries) {
+            throw new IndexOutOfBoundsException("Invalid index " + index);
+        }
+
+        if (numEntries - 1 - index >= 0) {
+            System.arraycopy(board, index + 1, board, index, numEntries - 1 - index);
+        }
+
+        board[numEntries - 1] = null;
+        numEntries--;
+    }
+
     private boolean qualifiesForBoard(GameEntry newEntry) {
         return boardNotFull() || lastRecord().lessThan(newEntry);
     }

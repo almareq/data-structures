@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ScoreBoardTest {
 
@@ -31,5 +32,12 @@ class ScoreBoardTest {
         var entry = new GameEntry(name, score);
         board.add(entry);
         return entry;
+    }
+
+    @Test
+    void remove() {
+        //        var rust = addNewEntry("rust", 800);
+//        board.remove(1);
+        assertTrue(true);
     }
 }
