@@ -1,4 +1,4 @@
-package datastructures.arrays.scoreboard;
+package org.datastructures.arrays.scoreboard;
 
 public record GameEntry(String name, int score) {
 
