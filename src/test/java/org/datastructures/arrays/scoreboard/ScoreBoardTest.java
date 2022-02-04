@@ -19,11 +19,11 @@ class ScoreBoardTest {
     @Test
     void add() {
         addNewEntry("peter", 300);
-        GameEntry rust = addNewEntry("rust", 800);
-        GameEntry boqueron = addNewEntry("boqueron", 700);
-        GameEntry potatoman = addNewEntry("potatoman", 400);
+        var rust = addNewEntry("rust", 800);
+        var boqueron = addNewEntry("boqueron", 700);
+        var potatoman = addNewEntry("potatoman", 400);
 
-        GameEntry[] expectedEntriesOrder = new GameEntry[]{rust, boqueron, potatoman};
+        var expectedEntriesOrder = new GameEntry[]{rust, boqueron, potatoman};
         assertArrayEquals(expectedEntriesOrder, board.entries());
     }
 
