@@ -8,9 +8,6 @@ public record GameEntry(String name, int score) {
 
     @Override
     public String toString() {
-        return "GameEntry{" +
-                "name='" + name + '\'' +
-                ", score=" + score +
-                '}';
+        return "GameEntry {" + name + ", " + score + "}";
     }
 }

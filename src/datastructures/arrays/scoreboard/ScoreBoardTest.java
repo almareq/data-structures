@@ -3,29 +3,28 @@ package datastructures.arrays.scoreboard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class ScoreBoardTest {
+
+    public static final int CAPACITY = 3;
 
     private ScoreBoard board;
 
     @BeforeEach
     void setUp() {
-        board = new ScoreBoard(2);
+        board = new ScoreBoard(CAPACITY);
     }
 
     @Test
     void add() {
-        GameEntry peter = addNewEntry("peter", 300);
+        addNewEntry("peter", 300);
         GameEntry rust = addNewEntry("rust", 800);
         GameEntry boqueron = addNewEntry("boqueron", 700);
+        GameEntry potatoman = addNewEntry("potatoman", 400);
 
-        var entries = board.entries();
-        assertSame(entries[0], rust);
-        assertSame(entries[1], boqueron);
-        assertFalse(Arrays.asList(entries).contains(peter));
+        GameEntry[] expectedEntriesOrder = new GameEntry[]{rust, boqueron, potatoman};
+        assertArrayEquals(expectedEntriesOrder, board.entries());
     }
 
     private GameEntry addNewEntry(String name, int score) {

@@ -2,11 +2,10 @@ package datastructures.arrays.scoreboard;
 
 public class ScoreBoard {
 
-    private int numEntries;
+    private int numEntries = 0;
     private final GameEntry[] board;
 
     public ScoreBoard(int capacity) {
-        numEntries = 0;
         board = new GameEntry[capacity];
     }
 
