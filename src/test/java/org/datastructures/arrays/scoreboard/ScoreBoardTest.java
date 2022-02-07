@@ -3,8 +3,7 @@ package org.datastructures.arrays.scoreboard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ScoreBoardTest {
 
@@ -36,8 +35,11 @@ class ScoreBoardTest {
 
     @Test
     void remove() {
-        //        var rust = addNewEntry("rust", 800);
-//        board.remove(1);
-        assertTrue(true);
+        var peter = addNewEntry("peter", 500);
+        addNewEntry("rust", 800);
+        assertThrowsExactly(IndexOutOfBoundsException.class, () -> board.remove(8));
+        board.remove(0);
+        assertSame(peter, board.entries()[0]);
+        assertNull(board.entries()[1]);
     }
 }

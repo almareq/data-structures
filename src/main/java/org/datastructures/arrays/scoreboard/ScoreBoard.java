@@ -24,9 +24,7 @@ public class ScoreBoard {
             throw new IndexOutOfBoundsException("Invalid index " + index);
         }
 
-        if (numEntries - 1 - index >= 0) {
-            System.arraycopy(board, index + 1, board, index, numEntries - 1 - index);
-        }
+        System.arraycopy(board, index + 1, board, index, numEntries - 1 - index);
 
         board[numEntries - 1] = null;
         numEntries--;
